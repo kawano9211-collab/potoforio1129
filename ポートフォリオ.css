@@ -425,7 +425,7 @@ a {
     transform: translate(-50%, -50%);
     /* 画像周りの背景色 */
     color: rgb(0, 0, 0);
-    font-size: 3vw;
+    font-size: 2vw;
     text-align: center;
     margin-left: -2%;
 }
@@ -433,6 +433,7 @@ a {
 @media screen and (max-width: 768px) {
     .mokuzi-text {
         margin-left: -5%;
+        font-size: 3vw;
     }
 }
 
@@ -626,4 +627,98 @@ a {
 
 .tab-4 label:has(:checked)+div {
     display: block;
+}
+
+.d-none {
+    display: none;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.test ul {
+    color: #192653;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+    .test ul {
+        font-size: 30px;
+    }
+}
+
+.test li {
+    background-color: #FDE948;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    width: 30%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .test li {
+        height: 90px;
+    }
+}
+
+.test li.active {
+    color: #FFFFFF;
+    background-color: #192653;
+}
+
+.test__select {
+    margin-top: 27px;
+}
+
+@media screen and (min-width: 1024px) {
+    .test__select {
+        margin-top: 40px;
+    }
+}
+
+.test__txt {
+    padding: 20px;
+    border: #192653 solid 1px;
+    border-radius: 0 0 20px 20px;
+    height: 458px;
+}
+
+@media screen and (min-width: 768px) {
+    .test__txt {
+        border: #192653 solid 3px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kon {
+        margin-left: 30%;
+    }
+
+    .sesaku {
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .saizu1 {
+        font-size: 100%;
+    }
+
+    .ugoku {
+        margin-top: 10%;
+    }
+
 }

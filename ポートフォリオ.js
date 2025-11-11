@@ -1,28 +1,31 @@
-document.querySelectorAll('.hamburger-menu').forEach(hamburgerMenu => {
-    const container = hamburgerMenu.parentElement;
-    const navMenu = container.querySelector('.nav-menu');
-    const overlay = container.querySelector('.overlay');
 
-    hamburgerMenu.addEventListener('click', () => {
-        hamburgerMenu.classList.toggle('active');
-        navMenu.classList.toggle('active');
+class Onclick {
+    constructor() {
+        this._click();
+    }
 
-        if (navMenu.classList.contains('active')) {
-            overlay.classList.add('active');
-            setTimeout(() => {
-                const menuItems = navMenu.querySelectorAll('a');
-                menuItems.forEach((item, index) => {
-                    setTimeout(() => { item.classList.add('show'); }, index * 150);
+    _click() {
+        // すべてのタブとコンテンツを取得し、変数に格納
+        var testTabs = document.querySelectorAll(".test__select ul.flex-row li");
+        var testContents = document.querySelectorAll(".test__txt");
+
+
+        testTabs.forEach(function (tab, index) {
+            tab.addEventListener("click", function () {
+                // すべてのタブから "active" クラスを削除
+                testTabs.forEach(function (tab) {
+                    tab.classList.remove("active");
                 });
-            }, 300);
-        } else {
-            const menuItems = navMenu.querySelectorAll('a');
-            menuItems.forEach(item => item.classList.remove('show'));
-            setTimeout(() => { overlay.classList.remove('active'); }, 200);
-        }
-    });
-});
-document.querySelector('.hamburger-menu').addEventListener('click', function () {
-    this.classList.toggle('active');
-    document.querySelector('.nav-menu').classList.toggle('active');
-});
+                // クリックされたタブに "active" クラスを追加
+                this.classList.add("active");
+                // すべてのコンテンツを非表示にする
+                testContents.forEach(function (content) {
+                    content.classList.add("d-none");
+                });
+                // クリックされたタブに対応するコンテンツを表示する
+                testContents[index].classList.remove("d-none");
+            });
+        });
+    }
+}
+new Onclick();
